@@ -10,8 +10,16 @@ import Combine
 
 class HomeViewModel: ObservableObject {
     
-    @Published var quotes: [QuotesModel] = []
+    @Published var quotes: [QuotesModel] = [] {
+        willSet {
+            if !newValue.isEmpty {
+                isLoading.toggle()
+            }
+        }
+    }
+    
     @Published var isLoading: Bool = true
+    
     @Published var savedImageName: String = UserDefaults.standard.savedImageName {
         didSet{
             UserDefaults.standard.savedImageName = savedImageName
@@ -19,6 +27,11 @@ class HomeViewModel: ObservableObject {
     }
     
     private var bag = Set<AnyCancellable>()
+    
+    init() {
+        getQutoes()
+        setPublishers()
+    }
     
     func setPublishers() {
         UserDefaults

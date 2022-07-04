@@ -8,37 +8,6 @@
 import Foundation
 import SwiftUI
 
-/// A view that switches between multiple child views using interactive user
-/// interface elements.
-///
-/// To create a user interface with tabs, place views in a `TabView` and apply
-/// the ``View/tabItem(_:)`` modifier to the contents of each tab. The following
-/// creates a tab view with three paged vertical tabs:
-///
-///     VTabView {
-///         Text("The First Tab")
-///             .tabItem {
-///                 Image(systemName: "square.fill")
-///                 Text("First")
-///             }
-///         Text("Another Tab")
-///             .tabItem {
-///                 Image(systemName: "circle.fill")
-///                 Text("Second")
-///             }
-///         Text("The Last Tab")
-///             .tabItem {
-///                 Image(systemName: "triangle.fill")
-///                 Text("Third")
-///             }
-///     }
-///     .font(.headline)
-///     .tabViewStyle(PageTabViewStyle())
-///
-/// Tab views only support tab items of type ``Text``, ``Image``, or an image
-/// followed by text. Passing any other type of view results in a visible but
-/// empty tab item.
-@available(iOS 14.0, *)
 public struct VTabView<Content, SelectionValue>: View where Content: View, SelectionValue: Hashable {
     
     private var selection: Binding<SelectionValue>?
@@ -46,9 +15,7 @@ public struct VTabView<Content, SelectionValue>: View where Content: View, Selec
     private var indexPosition: IndexPosition
     
     private var content: () -> Content
-    
-    /// Creates an instance that selects from content associated with
-    /// `Selection` values.
+
     public init(selection: Binding<SelectionValue>?, indexPosition: IndexPosition = .leading, @ViewBuilder content: @escaping () -> Content) {
         self.selection = selection
         self.indexPosition = indexPosition

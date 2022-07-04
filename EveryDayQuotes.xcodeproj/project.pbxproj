@@ -12,6 +12,7 @@
 		3089C6982872524200CFFC18 /* ChangeBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089C6972872524200CFFC18 /* ChangeBackgroundView.swift */; };
 		3089C69A287252DA00CFFC18 /* ChangeBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089C699287252DA00CFFC18 /* ChangeBackgroundViewModel.swift */; };
 		3089C69C2872772900CFFC18 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089C69B2872772900CFFC18 /* UserDefaults+Extension.swift */; };
+		3089C69E2872E9D500CFFC18 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089C69D2872E9D500CFFC18 /* Array+Extension.swift */; };
 		30C14C5A2870014300F748D8 /* EveryDayQuotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C14C592870014300F748D8 /* EveryDayQuotesApp.swift */; };
 		30C14C5C2870014300F748D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C14C5B2870014300F748D8 /* HomeView.swift */; };
 		30C14C5E2870014400F748D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C14C5D2870014400F748D8 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		3089C6972872524200CFFC18 /* ChangeBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBackgroundView.swift; sourceTree = "<group>"; };
 		3089C699287252DA00CFFC18 /* ChangeBackgroundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBackgroundViewModel.swift; sourceTree = "<group>"; };
 		3089C69B2872772900CFFC18 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		3089C69D2872E9D500CFFC18 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		30C14C562870014300F748D8 /* EveryDayQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EveryDayQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C14C592870014300F748D8 /* EveryDayQuotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryDayQuotesApp.swift; sourceTree = "<group>"; };
 		30C14C5B2870014300F748D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				30C14C592870014300F748D8 /* EveryDayQuotesApp.swift */,
 				3089C69B2872772900CFFC18 /* UserDefaults+Extension.swift */,
+				3089C69D2872E9D500CFFC18 /* Array+Extension.swift */,
 				3089C6952872521F00CFFC18 /* Models */,
 				3089C6932872520A00CFFC18 /* Modules */,
 				3089C691287251F500CFFC18 /* CusomViews */,
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3089C69A287252DA00CFFC18 /* ChangeBackgroundViewModel.swift in Sources */,
+				3089C69E2872E9D500CFFC18 /* Array+Extension.swift in Sources */,
 				30C14C5C2870014300F748D8 /* HomeView.swift in Sources */,
 				3089C6982872524200CFFC18 /* ChangeBackgroundView.swift in Sources */,
 				30C14C6A2870027500F748D8 /* QuotesModel.swift in Sources */,
