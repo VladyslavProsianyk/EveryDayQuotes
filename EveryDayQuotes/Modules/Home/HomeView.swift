@@ -39,22 +39,17 @@ struct HomeView: View {
                         Spacer()
                         
                         HStack {
-                            
-//                            Button {
-//                                print("Create own quote")
-//                                self.showingChangeBackground.toggle()
-//                            } label: {
-//                                Image(systemName: "plus")
-//                                    .resizable()
-//                                    .frame(width: 25, height: 25, alignment: .center)
-//                            }
-//
-//                            .frame(width: 30, height: 30, alignment: .center)
-//                            .padding(10)
-//                            .background(.mint)
-//                            .clipShape(Capsule())
-//                            .foregroundColor(.black)
-//
+                            NavigationLink(destination: AddNewQuoteView()) {
+                                Image(systemName: "plus")
+                                    .resizable()
+                                    .clipShape(Circle())
+                                    .foregroundColor(.black)
+                                    .frame(width: 25, height: 25)
+                                    .padding(12.5)
+                                    .background(Color.mint)
+                                    .clipShape(Circle())
+                            }
+
                             Button {
                                 self.showingChangeBackground.toggle()
                             } label: {

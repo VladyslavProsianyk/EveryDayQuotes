@@ -13,12 +13,14 @@ class HomeViewModel: ObservableObject {
     @Published var quotes: [QuotesModel] = [] {
         willSet {
             if !newValue.isEmpty {
-                isLoading.toggle()
+                isLoading = false
             }
         }
     }
     
     @Published var isLoading: Bool = true
+    
+    @Published var isNeedToBeDissmissed: Bool = false
     
     @Published var savedImageName: String = UserDefaults.standard.savedImageName {
         didSet{
@@ -43,6 +45,18 @@ class HomeViewModel: ObservableObject {
                     self.savedImageName = newValue
                 }
             }.store(in: &bag)
+        
+        UserDefaults
+            .standard
+            .publisher(for: \.savedQuotes)
+            .sink { [weak self] newValue in
+                guard let self = self else { return }
+                newValue.forEach { quote in
+                    if !self.quotes.contains(quote) {
+                        self.quotes.insert(quote, at: 0)
+                    }
+                }
+            }.store(in: &bag)
     }
     
     func getQutoes() {
@@ -58,7 +72,10 @@ class HomeViewModel: ObservableObject {
             .replaceError(with: [])
             .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
-            .assign(to: \.quotes, on: self)
+            .sink(receiveValue: { [weak self] quotes in
+                self?.quotes = UserDefaults.standard.savedQuotes
+                self?.quotes.append(contentsOf: quotes)
+            })
             .store(in: &bag)
     }
     

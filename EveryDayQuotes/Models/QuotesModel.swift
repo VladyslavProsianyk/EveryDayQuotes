@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct QuotesModel: Codable, Hashable {
+@objc class QuotesModel: NSObject, Codable {
     var text: String
     var author: String?
+    
+    init(text: String, author: String?) {
+        self.text = text
+        self.author = author
+    }
 }
 
